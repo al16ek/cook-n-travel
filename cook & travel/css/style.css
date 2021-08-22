@@ -1,0 +1,620 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border: none;
+}
+
+input[type="text"] {
+  background: transparent;
+  border: none;
+  color: #fdd418;
+}
+
+input[type="checkbox"]:checked,
+input[type="checkbox"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type="checkbox"]:checked + label,
+input[type="checkbox"]:not(:checked) + label {
+  display: inline-block;
+  position: relative;
+  padding-left: 28px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label,
+input[type="checkbox"]:not(:checked) + label {
+  display: inline-block;
+  position: relative;
+  padding-left: 28px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #fdd418;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Regular.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Light.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Medium.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("/fonts/Comfortaa.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #0b141d;
+}
+
+.site-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 0 33px;
+}
+
+.btn {
+  font-size: 20px;
+  width: 260px;
+  height: 60px;
+  background-color: #f8d930;
+  border-radius: 15px;
+}
+
+.btn:hover {
+  background-color: black;
+  color: #f8d930;
+}
+
+.btn:hover a {
+  color: #f8d930;
+}
+
+.header {
+  background-image: url(/img/header-bg.png);
+  background-repeat: no-repeat;
+}
+
+.header__nav {
+  padding-top: 40px;
+}
+
+.header__nav-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  font-size: 18px;
+}
+
+.menu-link:hover {
+  text-decoration: underline;
+}
+
+.menu-item {
+  padding-right: 25px;
+}
+
+.header__socials {
+  display: flex;
+}
+
+.header__social-link {
+  padding-right: 15px;
+}
+
+.header__logo {
+  font-family: "Comfortaa";
+  font-size: 24px;
+}
+
+.header__title {
+  font-size: 48px;
+  padding-top: 80px;
+}
+
+.header__descr {
+  font-size: 30px;
+  padding-top: 110px;
+}
+
+.header__btn {
+  padding-top: 60px;
+  padding-bottom: 280px;
+}
+
+.about__title {
+  padding-left: 120px;
+  text-transform: uppercase;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about__img {
+  display: flex;
+}
+
+.about__img-info {
+  padding-top: 120px;
+  max-height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about__img-info img {
+  max-height: 113px;
+}
+
+.year30 {
+  max-width: 169px;
+}
+
+.country73 {
+  max-width: 224px;
+}
+
+.masterclas101 {
+  max-width: 284px;
+}
+
+.about__text-bold {
+  font-size: 30px;
+  padding-top: 60px;
+  padding-bottom: 95px;
+  padding-right: 75px;
+}
+
+.about__text {
+  padding-top: 50px;
+  width: 50%;
+}
+
+.about__text-p {
+  width: 400px;
+  padding-bottom: 60px;
+  padding-left: 120px;
+}
+
+.masterclass__schedule-title {
+  padding-top: 90px;
+  text-transform: uppercase;
+  padding-left: 680px;
+}
+
+.table {
+  padding-top: 80px;
+}
+
+.table__string-line {
+  width: 1134px;
+  height: 0px;
+  border: 1px solid #fdd418;
+}
+
+.table__string-text {
+  align-items: center;
+  display: flex;
+}
+
+.country {
+  width: 155px;
+  font-size: 30px;
+  padding-right: 350px;
+  padding-top: 38px;
+  padding-bottom: 38px;
+}
+
+.city {
+  width: 110px;
+  text-transform: uppercase;
+  color: #b4b4b4;
+  padding-right: 400px;
+}
+
+.masterclass__content {
+  padding-top: 80px;
+  display: flex;
+}
+
+.masterclass__content-img {
+  padding-right: 50px;
+}
+
+.masterclass__content-imgTop {
+  display: flex;
+  width: 58%;
+  justify-content: space-between;
+}
+
+.masterclass__content-imgBottom {
+  padding-top: 15px;
+  display: flex;
+  width: 58%;
+  justify-content: space-between;
+}
+
+.masterclass__content-text-title {
+  font-family: "Montserrat";
+  font-weight: 800;
+  padding-bottom: 20px;
+}
+
+.masterclass__content-text-price {
+  padding-top: 30px;
+  width: 250px;
+}
+
+.masterclass__content-text-readmore {
+  width: 222px;
+  padding-top: 30px;
+}
+
+.masterclass__content-text-readmore > a {
+  text-decoration: underline;
+}
+
+.masterclass__btn {
+  padding-top: 30px;
+}
+
+.blog__name {
+  padding-top: 150px;
+  padding-left: 680px;
+}
+
+.blog__title {
+  font-size: 30px;
+}
+
+.blog__descr {
+  padding-top: 30px;
+  width: 270px;
+}
+
+.blog__link {
+  text-decoration: underline;
+  padding-top: 65px;
+  display: block;
+}
+
+.blog__vietnam {
+  padding-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog__alaska {
+  padding-top: 135px;
+  display: flex;
+  align-items: center;
+}
+
+.blog__alaska .blog__img {
+  padding-right: 76px;
+}
+
+.blog__paris {
+  padding-top: 135px;
+  display: flex;
+  padding-left: 400px;
+  align-items: center;
+  padding-bottom: 140px;
+}
+
+.blog__paris .blog__descr {
+  padding-right: 90px;
+  width: 350px;
+}
+
+.form {
+  background-image: url(/img/Rectangle\ 58.png);
+  background-repeat: no-repeat;
+  color: #fdd418;
+}
+
+.form__content {
+  padding-top: 170px;
+  padding-left: 740px;
+}
+
+.form__text {
+  padding-bottom: 100px;
+}
+
+.form__text-input {
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+
+.form__text-line {
+  width: 337px;
+  border: 1px solid #fdd418;
+}
+
+.form__btn {
+  width: 308px;
+  height: 65px;
+  border: 2px solid #fdd418;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.form__btn:hover {
+  background-color: #fdd418;
+  border: 2px solid transparent;
+  color: white;
+}
+
+.form__privacy {
+  padding-top: 15px;
+  padding-bottom: 100px;
+}
+
+input[type="checkbox"]:checked + label:before,
+input[type="checkbox"]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fdd418;
+  border-radius: 1px;
+}
+
+input[type="checkbox"]:checked + label:after,
+input[type="checkbox"]:not(:checked) + label:after {
+  content: "";
+  position: absolute;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  left: 5px;
+  top: 4px;
+  width: 12px;
+  height: 10px;
+  border-radius: 1px;
+  border-left: 3px solid #fdd418;
+  border-bottom: 3px solid #fdd418;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+input[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+}
+
+.footer {
+  background-color: #0c1729;
+  color: #fdd418;
+}
+
+.footer__content {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__logo {
+  font-family: "Comfortaa";
+  font-size: 24px;
+}
+
+.footer__privicy {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__privicy a:first-child {
+  padding-bottom: 45px;
+}
+
+.footer__privicy > a {
+  color: #fdd418;
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__nav > a {
+  color: #fdd418;
+  line-height: 2;
+}
+
+.footer__socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__socials > a {
+  color: #fdd418;
+  line-height: 2;
+}
+
+.visa {
+  padding-top: 25px;
+  display: flex;
+}
+
+.slider {
+  background-color: #c7dce8;
+}
+
+.slider__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 50px;
+}
+
+.slider__img {
+  display: none;
+  max-width: 900px;
+  border-radius: 20%;
+}
+.slider__img.curry {
+  display: block;
+}
+
+.slider__content a {
+  text-decoration: none;
+  color: #fd7ead;
+  font-style: 20px;
+}
+.slider__content a:hover {
+  color: #0ab6dd;
+}
+
+.slider__prev img {
+  width: 50px;
+  height: 50px;
+}
+
+.slider__next img {
+  width: 50px;
+  height: 50px;
+  transform: rotate(180deg);
+}
